@@ -1,5 +1,9 @@
 # Artificial Neural Network
 
+# Check that what tensorflow is using [CPU or GPU], do it @commandPrompt [activated-env]:
+    #import tensorflow as tf
+    #sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
+
 # Installing Tensorflow
 # Install Tensorflow from the website: https://www.tensorflow.org/versions/r0.12/get_started/os_setup.html
 
@@ -64,7 +68,7 @@ classifier.add(Dense(output_dim = 1, init = 'uniform', activation = 'sigmoid'))
 classifier.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = ['accuracy'])
 
 # Fitting the ANN to the Training set
-classifier.fit(X_train, y_train, batch_size = 10, nb_epoch = 100)
+classifier.fit(X_train, y_train, batch_size = 10, epochs = 100)
 
 # Part 3 - Making the predictions and evaluating the model
 
